@@ -37,7 +37,7 @@ ol {
   list-style: none;
 }
 
-/* main */
+/* hidden class */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -139,27 +139,27 @@ ol {
 }
 
 input[type="checkbox"]:checked + span {
-  display: inherit;
-  justify-content: center;
-  align-items: center;
-  outline: -2px solid #000;
+  display: block;
+  border: 1px solid #1b1919;
   background-color: #fff;
   background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 50%;
 }
 
 input[type="checkbox"]:focus-visible + span {
+  border: 1px solid #fff;
 }
 
 .search-form__pseudo-checkbox {
   display: block;
   width: 19px;
-  height: 19px;
-  border: 1px solid #fff;
+  height: 19x;
+  outline: 1px solid #ffffff;
   background-color: transparent;
-  clip-path: inset(-5px);
 }
 
-/* KNAPKI */
+/* KNoPKI */
 
 .button {
   width: 194px;
@@ -181,14 +181,9 @@ input[type="checkbox"]:focus-visible + span {
 /* pseudoclasses */
 .search-form__pseudo-checkbox::after {
   content: "";
-  /* display: block;
-  margin: 1px;
-  width: 16px;
-  height: 16px; */
   background-color: #fff;
 }
 
-/* state of buttons */
 .search-form__textfield:active {
   border: none;
   border-radius: none;
@@ -202,6 +197,8 @@ input[type="checkbox"]:focus-visible + span {
 .search-form__label::has(:focus-visible) {
   border: 1px solid #fff;
 }
+
+/* state of buttons */
 
 button:active {
   background-color: #545050;
@@ -217,23 +214,25 @@ button:hover {
   border: none;
   font-family: "'Fira Sans Condensed'", sans-serif;
   font-weight: normal;
-  /* шрифты */
   font-size: 18px;
-  /* display: flex; */
 }
 
-/* right deyail section */
+/* right detail section */
+
 .content__details {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 .title {
-  margin-bottom: 26px;
+  margin-bottom: 24px;
   color: #fff;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 75px;
-  line-height: 94%;
+  font-style: normal;
+  line-height: 70px;
   letter-spacing: 0;
   text-align: left;
   text-transform: uppercase;
@@ -242,6 +241,7 @@ button:hover {
 /* буквы в серый */
 .content__accent {
   color: #545050;
+  line-height: 75px;
 }
 
 .content__list {
@@ -254,10 +254,11 @@ button:hover {
 .content__list::-webkit-scrollbar {
   display: none;
 }
+
 .content__list-item {
   display: flex;
   width: 100%;
-  margin-bottom: 30px; /* это исправить для нот чилд */
+  margin-bottom: 35px;
 }
 
 .content__card-link {
@@ -274,7 +275,7 @@ button:hover {
 
 .content__video-card-title {
   padding: 2px;
-  color: #fff; /* на всякий */
+  color: #fff;
   font-family: Oswald, sans-serif;
   font-weight: bold;
   font-size: 28px;
