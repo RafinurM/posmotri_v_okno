@@ -290,7 +290,6 @@ ol {
   margin-bottom: 35px;
 }
 
-
 .content__card-link {
   display: flex;
   margin: 4px;
@@ -355,9 +354,6 @@ input[type="checkbox"]:checked + span {
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: 50%;
-}
-
-input[type="checkbox"]:focus-visible + span {
 }
 
 .search-form__label:active > input {
