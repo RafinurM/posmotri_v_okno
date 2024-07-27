@@ -9,6 +9,10 @@ html {
 }
 
 .page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   margin: 0 auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -55,7 +59,6 @@ ol {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-content: flex-end;
   margin: 133px 30px;
 }
 
@@ -78,7 +81,7 @@ ol {
   min-width: 711px;
   height: 386px;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 }
 
 /* form */
@@ -128,7 +131,7 @@ ol {
 
 .search-form__label {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   width: fit-content;
   border: 1px solid #fff;
   border-right: none;
@@ -177,10 +180,13 @@ ol {
   width: 100%;
 }
 
-/* убираем фокус *в макете не указан* */
+.more-button:focus {
+  outline: none;
+}
 
 .more-button:focus-visible {
-  outline: none;
+  outline: 1px solid #fff;
+  outline-offset: 2px;
 }
 
 /* pseudoclasses */
@@ -192,20 +198,20 @@ ol {
 
 /* state of buttons */
 
-button:focus {
+.button:focus {
   outline: none;
 }
 
-button:focus-visible {
+.button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
 
-button:active {
+.button:active {
   background-color: #545050;
 }
 
-button:hover {
+.button:hover {
   text-decoration: underline;
 }
 
@@ -275,12 +281,19 @@ button:hover {
 
 .content__list-item {
   width: 100%;
-  margin-bottom: 35px;
   max-height: 107px;
 }
 
+/* сброс отступа снизу у последнего элемента */
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 35px;
+}
+
+
 .content__card-link {
   display: flex;
+  margin: 4px;
   outline: none;
   color: inherit;
   text-decoration: none;
@@ -312,9 +325,9 @@ button:hover {
 
 .content__video-card-description-container {
   width: 50%;
+  margin: 2px;
   font-size: 18px;
   font-style: normal;
-  margin: 2px;
 }
 
 .content__video-card-description {
@@ -351,9 +364,13 @@ input[type="checkbox"]:focus-visible + span {
   border: 1px solid #fff;
 }
 
-.search-form__label:hover > input {
+.search-form__checkbox-list > .search-form__label:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.search-form__label:hover {
+  text-decoration: none;
 }
 
 .search-form__label:has(:focus-visible) {
